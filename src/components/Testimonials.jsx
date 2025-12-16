@@ -8,7 +8,7 @@ const testimonialsData = [
     role: "Kijana Inc",
     quote: "We found ADIBA to be an exceptionally cooperative partner—always focused on finding solutions, achieving success together, and delivering great results for the customer.",
     shortQuote: "Fast, secure and simple. This is a game-changer!",
-    image: "/api/placeholder/100/100" 
+    image: "/testimonial/fabiana.png" 
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const testimonialsData = [
     role: "FinTech NG",
     quote: "The integration process was seamless. Adiba provided the infrastructure we needed to scale our lending platform in record time.",
     shortQuote: "Seamless integration and incredible support.",
-    image: "/api/placeholder/100/100"
+    image: "/testimonial/david.jpg"
   }
 ];
 
@@ -78,10 +78,10 @@ const Testimonials = () => {
           </div>
 
           {/* Random Avatars Scattered on Map (Decorative) */}
-          <div className="absolute top-10 left-1/4 w-10 h-10 rounded-full border-2 border-white bg-gray-300"></div>
-          <div className="absolute top-20 right-1/3 w-12 h-12 rounded-full border-2 border-white bg-gray-300"></div>
-          <div className="absolute bottom-10 left-1/3 w-8 h-8 rounded-full border-2 border-white bg-gray-300"></div>
-          <div className="absolute bottom-20 right-1/4 w-10 h-10 rounded-full border-2 border-white bg-gray-300"></div>
+          <div className="absolute top-10 left-1/4 w-10 h-10 rounded-full"><img src="/testimonial/person3.png" alt="" /></div>
+          <div className="absolute top-20 right-1/3 w-12 h-12 rounded-full"><img src="/testimonial/person4.png" alt="" /></div>
+          <div className="absolute bottom-10 left-1/3 w-8 h-8 rounded-full"><img src="/testimonial/person5.png" alt="" /></div>
+          <div className="absolute bottom-20 right-1/4 w-10 h-10 rounded-full"><img src="/testimonial/person6.png" alt="" /></div>
 
           {/* Center Focus Card (The Active Testimonial Popover) */}
           <div className="relative z-10 bg-white p-6 rounded-2xl shadow-xl max-w-sm text-center transform transition-all duration-500">

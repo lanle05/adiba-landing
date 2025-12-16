@@ -3,10 +3,12 @@ import { Smartphone, Cloud, Zap, Database, ArrowRight } from "lucide-react";
 
 const FeatureItem = ({ icon: Icon, title, desc }) => (
   <div className="bg-white p-6 rounded-2xl shadow-soft max-w-xs z-10">
+    <div className="flex gap-3">
     <div className="w-10 h-10 bg-peach rounded-full flex items-center justify-center mb-4 text-gold-500">
       <Icon size={20} />
     </div>
-    <h3 className="text-gold-500 font-bold mb-2">{title}</h3>
+    <h3 className="text-gold-500 font-bold">{title}</h3>
+    </div>
     <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
   </div>
 );
@@ -38,28 +40,28 @@ const BankingTech = () => {
             <FeatureItem
               icon={Smartphone}
               title="Cutting-edge Technology"
-              desc="Our innovative banking cloud platform ensures seamless integration."
+              desc="Our innovative Banking Cloud platform features some of the most advanced RESTful APIs in the global market. These APIs are designed to support scalability and facilitate international expansion."
             />
           </div>
           <div className="hidden lg:block absolute top-10 right-20">
             <FeatureItem
               icon={Zap}
               title="Powerful APIs"
-              desc="Microservices architecture allows you to scale manageably."
+              desc="With our smart API accessible services, you can easily manage the data of your users in real-time throughout the entire customer lifecycle: from onboarding to long-term support."
             />
           </div>
           <div className="hidden lg:block absolute bottom-10 left-20">
             <FeatureItem
               icon={Cloud}
               title="Cloud-based Banking"
-              desc="Cloud-native technology ensures outstanding reliability."
+              desc="Our entire banking infrastructure operates in the cloud, enabling us to deliver outstanding banking experiences for our partners' customers. We are at the forefront of developing innovative and fully digital financial products."
             />
           </div>
           <div className="hidden lg:block absolute bottom-10 right-20">
             <FeatureItem
               icon={Database}
               title="Data Mesh Architecture"
-              desc="Advanced mesh architecture helps harness critical data."
+              desc="Utilise our advanced data mesh architecture to harness critical data for informed decision-making, strategic planning, forecasting, and meeting regulatory requirements."
             />
           </div>
 

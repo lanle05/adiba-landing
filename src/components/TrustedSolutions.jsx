@@ -17,30 +17,38 @@ const TrustedSolutions = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-gold-500 font-bold text-xs uppercase tracking-widest mb-2">Trusted Solutions</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Complete embedded finance solutions for your retail business.</h2>
+          <p className="text-gold-500 font-bold text-xs uppercase tracking-widest mb-2">
+            Trusted Solutions
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Complete embedded finance solutions for your retail business.
+          </h2>
+          <p className="text-gray-500 text-lg leading-relaxed text-center">
+            Integrate banking seamlessly into your customer journey with our
+            retail engine and omnichannel API.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <SolutionCard 
-            title="Digital Banking" 
+          <SolutionCard
+            title="Digital Banking"
             img="/trusted/digital.png"
-            desc="Create your own neobank and digital bank with diverse account options." 
+            desc="Create your own neobank and digital bank with diverse account options, using our Digital Banking and Accounts APIs to customize and scale your financial services."
           />
-          <SolutionCard 
-            title="Payment" 
+          <SolutionCard
+            title="Payment"
             img="/trusted/payment.png"
-            desc="Our API enables seamless integration of payment gateways and mobile wallets." 
+            desc="Our APIs enable seamless integration of payment gateways, mobile wallets, and peer-to-peer transactions, ensuring quick and secure payments for your users."
           />
-          <SolutionCard 
-            title="Lending" 
+          <SolutionCard
+            title="Lending"
             img="/trusted/lending.png"
-            desc="Offer personalized loan options with competitive interest rates." 
+            desc="With our APIs, you can provide personalized loan options, competitive interest rates, and efficient loan processing to your customers."
           />
-          <SolutionCard 
-            title="Identification" 
+          <SolutionCard
+            title="Identification"
             img="/trusted/identification.png"
-            desc="Robust identification services including verification methods." 
+            desc="Our identity management APIs offer robust identification services, including verification methods, , and biometric authentication to protect your customers' identities."
           />
         </div>
 

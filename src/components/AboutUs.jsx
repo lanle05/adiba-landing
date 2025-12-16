@@ -6,17 +6,10 @@ const AboutUs = () => {
     <section className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         {/* Left: Network Diagram Image */}
-        {/* TIP: Export the 'Circular Network' group from Figma as an SVG for best results */}
         <div className="relative flex justify-center lg:justify-start">
           <div className="relative w-full max-w-lg aspect-square">
-            {/* Background Rings (CSS fallback if image fails) */}
-            <div className="absolute inset-0 border border-gray-100 rounded-full m-4"></div>
-            <div className="absolute inset-0 border border-gray-100 rounded-full m-16"></div>
-            <div className="absolute inset-0 border border-gray-100 rounded-full m-32"></div>
-
-            {/* Main Image Placeholder */}
             <img
-              src="/api/placeholder/600/600"
+              src="/aboutus/groupimg.svg"
               alt="Adiba Network Diagram"
               className="relative z-10 w-full h-full object-contain"
             />
@@ -26,7 +19,6 @@ const AboutUs = () => {
         {/* Right: Content */}
         <div className="space-y-6">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-pink-500"></span>
             <p className="text-gold-500 font-bold text-xs uppercase tracking-widest">
               About Us
             </p>
