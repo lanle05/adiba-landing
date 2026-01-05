@@ -69,7 +69,7 @@ const Footer = () => {
             Start building your own banking service
           </h3>
           <button className="bg-navy-900 text-white px-8 py-3 rounded-full flex items-center gap-2">
-            Talk to us <ArrowRight size={16} />
+            Get Started <ArrowRight size={16} />
           </button>
         </div>
 

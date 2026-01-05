@@ -18,10 +18,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <button className="px-8 py-3 bg-peach text-navy-900 font-semibold rounded-full hover:bg-orange-200 transition flex items-center gap-2">
-              Talk to us <ArrowRight size={18} />
-            </button>
-            <button className="px-8 py-3 bg-navy-900 text-white font-semibold rounded-full hover:bg-navy-800 transition">
-              What we do
+              Get Started <ArrowRight size={18} />
             </button>
           </div>
         </div>
