@@ -15,7 +15,7 @@ const SolutionCard = ({ title, desc, img }) => (
 const TrustedSolutions = () => {
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-300 mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-gold-500 font-bold text-xs uppercase tracking-widest mb-2">
             Trusted Solutions

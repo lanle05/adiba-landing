@@ -36,16 +36,18 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md py-4 border-b border-gray-100">
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md py-4">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-2 font-bold text-2xl text-navy-900 cursor-pointer">
-          <div className="w-8 h-8 opacity-80"><img src="/navbar/adiba_logo.png" alt="adiba logo" /></div>
+          <div className="w-8 h-8 opacity-100">
+            <img src="/navbar/adiba_logo.png" alt="adiba logo" />
+          </div>
           <span>adiba</span>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <div className="hidden md:flex lg:ml-50 xl:ml-70 md:ml-0 items-center gap-8 text-sm font-medium text-gray-600">
           {navLinks.map((link) => (
             <div key={link.name} className="relative group">
               {/* Main Link */}
@@ -84,9 +86,11 @@ const Navbar = () => {
         </div>
 
         {/* CTA Button */}
-        <button className="hidden md:block bg-navy-900 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-navy-800 transition shadow-lg hover:shadow-xl">
-          Get Started
-        </button>
+        <div className="hidden md:block">
+          <button className="bg-indigo-950 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-navy-800 transition shadow-lg hover:shadow-xl">
+            Get Started
+          </button>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <button
@@ -97,7 +101,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Dropdown (Simplified for mobile) */}
+      {/* Mobile Menu Dropdown */}
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-6 flex flex-col items-center gap-6 border-t border-gray-100">
           {navLinks.map((link) => (
@@ -108,7 +112,7 @@ const Navbar = () => {
               >
                 {link.name}
               </a>
-              {/* Simple stacked list for mobile sub-links */}
+              {/* mobile sub-links */}
               {link.dropdown && (
                 <div className="flex flex-col gap-2 text-sm text-gray-500">
                   {link.dropdown.map((sub) => (

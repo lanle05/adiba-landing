@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 const AboutUs = () => {
   return (
     <section className="py-20 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-300 mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         {/* Left: Network Diagram Image */}
         <div className="relative flex justify-center lg:justify-start">
           <div className="relative w-full max-w-lg aspect-square">
@@ -24,7 +24,7 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-bold text-navy-900 leading-tight">
             The premier platform for embedded finance and digital banking
           </h2>
 
