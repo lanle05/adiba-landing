@@ -41,7 +41,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-2 font-bold text-2xl text-navy-900 cursor-pointer">
           <div className="w-8 h-8 opacity-100">
-            <img src="/navbar/adiba_logo.png" alt="adiba logo" />
+            <img src="/navbar/adiba_logo.png" alt="adiba logo" fetchPriority="high" />
           </div>
           <span>adiba</span>
         </div>
