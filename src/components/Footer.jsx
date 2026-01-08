@@ -96,7 +96,7 @@ const Footer = () => {
 
           <div className="footer-section__body__copyright">
             <div className="logo-area">
-              <img src="/navbar/logo.svg" alt="adiba logo" />
+              <img src="/navbar/peach-logo.svg" alt="adiba logo" />
             </div>
             <p>Copyright © Adiba Organization</p>
           </div>

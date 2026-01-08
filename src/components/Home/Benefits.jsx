@@ -47,6 +47,11 @@ const Benefits = () => {
               </div>
             ))}
           </div>
+          <div className="benefits__cta-button">
+            <button className="benefits__cta-button__inner">
+              Get Started <ArrowRight size={18} />
+            </button>
+          </div>
         </div>
         <div className="benefits__images-grid">
           <div className="benefits__images-grid-item item-left">

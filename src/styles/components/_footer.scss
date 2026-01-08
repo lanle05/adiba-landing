@@ -11,9 +11,9 @@
 
   &__card {
     position: absolute;
-    top: -3rem;
+    top: -4rem;
     left: 50%;
-    transform: translateX(-50%, -50%);
+    transform: translateX(-50%);
     width: 90%;
     max-width: 70rem;
     color: #0f193d;
@@ -63,10 +63,11 @@
   }
 
   &__body {
-    max-width: 85rem;
+    // max-width: 85rem;
     width: 100%;
     margin-inline: auto;
-    padding-inline: 2rem;
+    padding-inline: fluid(2rem, 4rem);
+    padding-block: fluid(2rem, 5rem);
 
     &__container {
       display: grid;
@@ -80,7 +81,7 @@
         grid-template-columns: repeat(2, 1fr);
       }
       @media (min-width: 1024px) {
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 1.5rem;
         align-items: start;
       }
@@ -95,11 +96,11 @@
 
       // 2. Header styling
       &-header {
-        margin-bottom: 1.5rem; // Increased margin for spacing
+        margin-bottom: 1.5rem;
         font-weight: 600;
         font-size: 16px;
         line-height: 29px;
-        color: #e2c8aa; // Gold/Tan color
+        color: #e2c8aa;
 
         a {
           color: inherit;
@@ -117,7 +118,7 @@
         li a {
           text-decoration: none;
           color: #ffffff;
-          font-size: 16px;
+          font-size: fluid(10px, 16px);
           font-weight: 300;
           line-height: 28px;
           list-style: none;
@@ -128,12 +129,17 @@
         }
       }
 
-      // 4. NEW: Newsletter styling (Previously raw Tailwind)
+      // 4. Newsletter styling
       &-newsletter {
         grid-column: span 2 / span 2;
-        background-color: #1e2542; // Navy-800 approx
+        background-color: #1e2542;
         padding: 1.5rem;
         border-radius: 1rem;
+        align-self: center;
+
+        @media(min-width: 1024px){
+          padding: fluid(16px, 32px);
+        }
 
         h4 {
           font-weight: 700;
@@ -172,14 +178,14 @@
       }
     }
 
-    // 5. NEW: Copyright styling (Previously raw Tailwind)
+    // Copyright styling
     &__copyright {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.875rem;
-      color: #6b7280; // Gray-500
+      font-size: fluid(0.5rem, 1rem);
+      color: #FFFFFF;
       gap: 1rem;
 
       @media (min-width: 768px) {
@@ -187,17 +193,9 @@
       }
 
       .logo-area {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-weight: 700;
-        color: #fff;
-        font-size: 1.25rem;
-
         img {
-          width: 1.5rem;
-          height: 1.5rem;
-          opacity: 0.9;
+          width: fluid(95px, 168px);
+          height: auto;
         }
       }
     }

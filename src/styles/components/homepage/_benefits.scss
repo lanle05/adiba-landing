@@ -87,6 +87,29 @@
         color: #6f758b;
       }
     }
+    &__cta-button {
+    font-size: fluid(1rem, 1.125rem);
+    line-height: 100%;
+    display: inline-flex;
+    align-self: center;
+
+    @media (min-width: 1024px) {
+      align-self: flex-start;
+    }
+
+    &__inner {
+      padding-inline: fluid(1.5rem, 2rem);
+      padding-block: fluid(0.75rem, 1rem);
+      background-color: #0F193D;
+      color: #ffffff;
+      border-radius: 41px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s;
+      border: none;
+    }
+  }
   }
 
   // --- Images Grid Column ---
