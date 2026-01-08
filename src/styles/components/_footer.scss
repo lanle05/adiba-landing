@@ -15,7 +15,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    max-width: 70rem;
+    max-width: 60rem;
     color: #0f193d;
     background-color: #ffffff;
     padding: fluid(1.5rem, 3rem);
@@ -33,6 +33,10 @@
 
     @media (min-width: 768px) {
       flex-direction: row;
+    }
+
+    @media (min-width: 1440px) {
+      max-width: 55rem;
     }
   }
 
