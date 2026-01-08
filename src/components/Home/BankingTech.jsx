@@ -1,88 +1,97 @@
 import React from "react";
-import { Smartphone, Cloud, Zap, Database, ArrowRight } from "lucide-react";
+import {
+  MessageProgramming,
+  CloudLightning,
+  Data,
+  Command,
+} from "iconsax-reactjs";
 
 const FeatureItem = ({ icon: Icon, title, desc }) => (
-  <div className="bg-white p-6 rounded-2xl shadow-soft max-w-xs z-10">
-    <div className="flex gap-3">
-    <div className="w-10 h-10 bg-peach rounded-full flex items-center justify-center mb-4 text-gold-500">
-      <Icon size={20} />
+  <div className="feature-card">
+    <div className="feature-header">
+      <div className="icon-wrapper">
+        <Icon size={20} variant="Bulk" />
+      </div>
+      <h3 className="feature-title">{title}</h3>
     </div>
-    <h3 className="text-gold-500 font-bold">{title}</h3>
-    </div>
-    <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
+    <p className="feature-desc">{desc}</p>
   </div>
 );
 
 const BankingTech = () => {
   return (
-    <section className="py-20 bg-gray-light relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-gray-50 to-purple-50 opacity-50"></div>
+    <section className="banking-tech">
+      <div className="bg-overlay" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <p className="text-gold-500 font-bold text-xs uppercase tracking-widest mb-2">
-          Technical Features
-        </p>
-        <h2 className="text-4xl font-bold mb-16 text-navy-900">
-          Banking tech reimagined
-        </h2>
+      <div className="container">
+        <p className="subtitle">Technical Features</p>
+        <h2 className="title">Banking tech reimagined</h2>
 
-        {/* Central Layout */}
-        <div className="relative flex flex-col items-center justify-center min-h-150">
-          <div className="relative z-20 w-64 md:w-80">
-            <img
-              src="/banking/phone.png"
-              alt="App Interface"
-              className="shadow-2xl"
-            />
+        <div className="layout">
+          {/* Phone */}
+          <div className="phone">
+            <img src="/banking/phone.png" alt="App Interface" />
           </div>
 
-          <div className="hidden lg:block absolute top-10 left-20">
+          {/* Desktop floating cards */}
+          <div className="feature feature--tl">
             <FeatureItem
-              icon={Smartphone}
+              icon={MessageProgramming}
               title="Cutting-edge Technology"
               desc="Our innovative Banking Cloud platform features some of the most advanced RESTful APIs in the global market. These APIs are designed to support scalability and facilitate international expansion."
             />
           </div>
-          <div className="hidden lg:block absolute top-10 right-20">
+
+          <div className="feature feature--tr">
             <FeatureItem
-              icon={Zap}
+              icon={Data}
               title="Powerful APIs"
               desc="With our smart API accessible services, you can easily manage the data of your users in real-time throughout the entire customer lifecycle: from onboarding to long-term support."
             />
           </div>
-          <div className="hidden lg:block absolute bottom-10 left-20">
+
+          <div className="feature feature--bl">
             <FeatureItem
-              icon={Cloud}
+              icon={CloudLightning}
               title="Cloud-based Banking"
               desc="Our entire banking infrastructure operates in the cloud, enabling us to deliver outstanding banking experiences for our partners' customers. We are at the forefront of developing innovative and fully digital financial products."
             />
           </div>
-          <div className="hidden lg:block absolute bottom-10 right-20">
+
+          <div className="feature feature--br">
             <FeatureItem
-              icon={Database}
+              icon={Command}
               title="Data Mesh Architecture"
               desc="Utilise our advanced data mesh architecture to harness critical data for informed decision-making, strategic planning, forecasting, and meeting regulatory requirements."
             />
           </div>
 
-          {/* Mobile*/}
-          <div className="grid md:grid-cols-2 gap-4 mt-12 lg:hidden">
+          {/* Mobile stacked cards */}
+          <div className="mobile-features">
             <FeatureItem
-              icon={Smartphone}
+              icon={MessageProgramming}
               title="Cutting-edge Technology"
               desc="Innovation at its core."
             />
             <FeatureItem
-              icon={Zap}
+              icon={Data}
               title="Powerful APIs"
               desc="Scalable microservices."
+            />
+            <FeatureItem
+              icon={CloudLightning}
+              title="Cloud-based Banking"
+              desc="Cloud-native financial infrastructure."
+            />
+            <FeatureItem
+              icon={Command}
+              title="Data Mesh Architecture"
+              desc="Smarter decisions through data."
             />
           </div>
         </div>
 
-        <button className="mt-12 bg-navy-900 text-white px-8 py-3 rounded-full flex items-center gap-2 mx-auto hover:bg-navy-800">
-          See our API Doc <ArrowRight size={16} />
-        </button>
+        <button className="cta">See our API Doc</button>
       </div>
     </section>
   );

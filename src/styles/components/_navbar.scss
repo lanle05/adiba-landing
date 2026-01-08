@@ -67,7 +67,7 @@
   &__menu-link {
     @include flex-center(row, center, center);
     gap: 4px;
-    font-size: 16px;
+    font-size: fluid(12px, 14px);
     font-weight: 400;
     color: #555555;
     transition: color 0.3s ease;

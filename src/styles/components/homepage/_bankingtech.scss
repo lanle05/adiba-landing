@@ -1,2 +1,181 @@
 @use "../../utils/functions" as *;
 @use "../../utils/mixins" as *;
+
+.banking-tech {
+  position: relative;
+  padding: 5rem 1.5rem;
+  background: #f9fafb;
+  overflow: hidden;
+
+  .bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #f9fafb, #ede9fe);
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1120px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .subtitle {
+    color: #c8700b;
+    font-size: fluid(0.75rem, 1.125rem);
+    font-weight: 500;
+    line-height: 1.8125em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .title {
+    font-size: 2.75rem;
+    font-weight: 500;
+    color: #0f193d;
+    margin-bottom: fluid(2rem, 3.625rem);
+  }
+
+  .layout {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Phone */
+  .phone {
+    width: fluid(240px, 700px);
+    z-index: 5;
+    padding-top: fluid(1rem, 2rem);
+    margin-left: fluid(0px, 30px);
+
+    img {
+      width: 100%;
+      @media (min-width: 1024px) {
+        transform: rotate(5deg) scale(1.05);
+        transform-origin: center;
+      }
+    }
+  }
+
+  /* Feature card */
+  .feature-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    max-width: 250px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: left;
+  }
+
+  .feature-header {
+    // display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background: #f5ece0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c8700b;
+  }
+
+  .feature-title {
+    padding-top: 10px;
+    font-weight: 600;
+    color: #c8700b;
+  }
+
+  .feature-desc {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #6b7280;
+  }
+
+  /* Desktop floating features */
+  .feature {
+    display: none;
+  }
+
+  /* Mobile stacked layout */
+  .mobile-features {
+    margin-top: 3rem;
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  /* Large screens */
+  @media (min-width: 1024px) {
+    .layout {
+      min-height: 700px;
+    }
+
+    .feature {
+      display: block;
+      position: absolute;
+      z-index: 10;
+    }
+
+    .feature--tl {
+      top: 12%;
+      left: 3%;
+    }
+
+    .feature--tr {
+      top: 12%;
+      right: 5%;
+    }
+
+    .feature--bl {
+      bottom: 40%;
+      left: 3%;
+    }
+
+    .feature--br {
+      bottom: 40%;
+      right: 3%;
+    }
+
+    @media (min-width: 1280px) {
+      .feature--tl,
+      .feature--bl {
+        left: 8%;
+      }
+
+      .feature--tr,
+      .feature--br {
+        right: 8%;
+      }
+    }
+
+    .mobile-features {
+      display: none;
+    }
+  }
+
+  .cta {
+    margin: 3rem auto 0;
+    background: #0f172a;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 999px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      background: #020617;
+    }
+  }
+}
