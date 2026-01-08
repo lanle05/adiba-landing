@@ -19,6 +19,13 @@
     max-width: 1440px;
   }
 
+  .navbar__logo {
+    img {
+      width: fluid(95px, 168px);
+      height: auto;
+    }
+  }
+
   &__menu-items-container {
     display: none;
 

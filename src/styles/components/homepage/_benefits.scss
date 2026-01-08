@@ -1,0 +1,142 @@
+@use "../../utils/functions" as *;
+@use "../../utils/mixins" as *;
+
+.BenefitSection {
+  display: grid;
+  align-items: center;
+  padding-block: fluid(5rem, 7rem);
+  margin-inline: auto;
+  padding-inline: fluid(1.5rem, 6rem);
+  gap: fluid(3rem, 5rem);
+
+  // Layout: Text on Left, Grid on Right
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  @media (max-width: 1023px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  // --- Text Column (.benefits) ---
+  .benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &__title {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 29px;
+      color: #c8700b;
+      text-transform: uppercase;
+    }
+
+    &__subtitle {
+      font-size: fluid(2rem, 2.75rem);
+      font-weight: 500;
+      line-height: 1.2;
+      color: #161c28;
+    }
+
+    &__cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    &__card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding-block: 1rem;
+
+      &__icon {
+        flex-shrink: 0;
+        width: 3rem;
+        height: 3rem;
+        background-color: #f5ece0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        &-image {
+          width: 1.5rem;
+          height: 1.5rem;
+          object-fit: contain;
+          filter: invert(37%) sepia(75%) saturate(2188%) hue-rotate(7deg)
+            brightness(98%) contrast(97%);
+        }
+      }
+
+      &__title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #333333;
+      }
+
+      &__desc {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.6;
+        color: #6f758b;
+      }
+    }
+  }
+
+  // --- Images Grid Column ---
+  .benefits__images-grid {
+    display: grid;
+    gap: 1.5rem;
+    width: 100%;
+    
+    // Mobile: 1 column
+    grid-template-columns: 1fr;
+
+    // Tablet/Desktop: 2 columns
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: start;
+    }
+
+    &-item {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+
+      &.item-left {
+        aspect-ratio: 3 / 4; 
+      }
+      &.item-right {
+        aspect-ratio: 4 / 3; 
+
+        @media(min-width:640px){
+          align-self: end;
+        }
+      }
+      &.item-bottom {
+        aspect-ratio: 2 / 1; 
+        
+        @media (min-width: 640px) {
+          grid-column: 1 / -1; 
+          width: 90%; 
+          max-width: 1200px; 
+          margin-inline: auto; 
+          border-radius: 7px;
+        }
+      }
+
+      .benefits__images {
+        width: 100%;       
+        height: 100%;      
+        object-fit: cover; 
+        display: block;
+      }
+    }
+  }
+}

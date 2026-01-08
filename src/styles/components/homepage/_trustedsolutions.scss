@@ -30,7 +30,7 @@
     }
 
     &__header-title {
-      font-size: 44px;
+      font-size: fluid(18px, 24px);
       font-weight: 500;
       line-height: 50px;
       color: #161c28;
@@ -38,7 +38,7 @@
 
       @media (max-width: 768px) {
         padding-block: 16px;
-        font-size: 36px;
+        font-size: fluid(24px, 36px);
         line-height: 42px;
       }
     }
