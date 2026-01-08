@@ -1,30 +1,31 @@
-import { useState } from 'react'
 import React from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import AboutUs from "./components/AboutUs";
-import TrustedSolutions from "./components/TrustedSolutions";
-import BankingTech from "./components/BankingTech";
-import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+// Pages
+const Home = React.lazy(() => import("./pages/Home"));
+const AboutPage = React.lazy(() => import("./pages/About"));
+
+// Components
+const Navbar = React.lazy(() => import("./components/Navbar"));
+const Footer = React.lazy(() => import("./components/Footer"));
+const NotFound = React.lazy(() => import("./components/NotFound"));
 
 function App() {
-
   return (
-    <>
-      <div className="font-sans text-navy-900 bg-white overflow-x-hidden">
+    <Router>
+      {/* <div className="font-sans text-navy-900 bg-white overflow-x-hidden"> */}
       <Navbar />
-        <Hero />
-        <AboutUs />
-        <TrustedSolutions />
-        <BankingTech />
-        <Testimonials />
-        <Footer />
-      </div>
-    </>
-  )
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      <Footer />
+      {/* </div> */}
+    </Router>
+  );
 }
 
-export default App
+export default App;

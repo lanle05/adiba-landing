@@ -1,0 +1,205 @@
+@use "../../utils/functions" as *;
+@use "../../utils/mixins" as *;
+
+.hero-section {
+  position: relative;
+  padding-top: fluid(2rem, 4rem);
+  padding-bottom: fluid(4rem, 7rem);
+  overflow: hidden;
+
+  &__content-top {
+    padding-block: fluid(27px, 40px);
+    padding-inline: fluid(24px, 80px);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 4rem;
+    }
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: fluid(2rem, 4rem);
+    z-index: 10;
+    text-align: left;
+
+    @media (min-width: 1024px) {
+      text-align: left;
+      flex: 1;
+      max-width: fluid(579px, 700px);
+      padding-top: 3rem;
+    }
+  }
+
+  &__title {
+    font-size: fluid(2.25rem, 3.75rem);
+    color: #0f193d;
+    font-weight: 500;
+    line-height: 1.1;
+
+    &__span {
+      color: #c8700b;
+    }
+  }
+
+  &__description {
+    font-size: fluid(1rem, 1.125rem);
+    color: #3f5772;
+    max-width: 24rem;
+    line-height: 22px;
+
+    @media (min-width: 1024px) {
+      max-width: 36rem;
+    }
+  }
+
+  &__cta-button {
+    font-size: fluid(1rem, 1.125rem);
+    line-height: 100%;
+    display: inline-flex;
+    align-self: center;
+
+    @media (min-width: 1024px) {
+      align-self: flex-start;
+    }
+
+    &__inner {
+      padding-inline: fluid(1.5rem, 2rem);
+      padding-block: fluid(0.75rem, 1rem);
+      background-color: #e2c8aa;
+      color: #0f193d;
+      border-radius: 41px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s;
+      border: none;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    @media (min-width: 1024px) {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+      width: 663px;
+    }
+
+    &__image-container {
+      position: relative;
+      z-index: 10;
+      width: 663px;
+      max-width: 42rem;
+      border-radius: 2.5rem;
+      overflow: hidden;
+      transform: translateY(-0.5rem);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__partners-strip {
+    margin-top: fluid(4rem, 6rem);
+    padding-inline: fluid(1.5rem, 5rem);
+    margin-inline: auto;
+    max-width: 75rem;
+    width: 100%;
+  }
+  &__partners-strip__inner {
+    display: flex;
+    flex-direction: row;
+    gap: fluid(2rem, 4rem);
+    align-items: center;
+    justify-content: center;
+    
+
+    @media (min-width: 1024px) {
+      justify-content: space-evenly;
+    }
+
+    @media (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__partners-strip__text-container {
+    display: block;
+    max-width: 70rem;
+    width: 100%;
+
+    @media (max-width: 992px) {
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      max-width: 50%;
+      width: auto;
+    }
+
+  }
+  &__partners-strip__text {
+    font-size: 18px;
+    line-height: 32px;
+    color: #5b738d;
+  }
+  &__partners-strip__logos-container {
+    display: flex;
+    flex-direction: row;
+    gap: fluid(2rem, 6rem);
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 1024px) {
+      justify-content: space-evenly;
+      gap: 0;
+    }
+
+    @media (max-width: 992px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: fluid(2rem, 4rem);
+    }
+  }
+  &__partners-strip__logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: fluid(80px, 90px);
+    
+  
+  }
+
+  &__partners-strip__logo-joined {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: fluid(0.15rem, 1rem);
+  }
+
+  &__partners-strip__logo-item__img {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &__partners-strip__logo-item__country-img{
+    width: 10%;
+    height: auto;
+    object-fit: contain;
+  }
+
+}

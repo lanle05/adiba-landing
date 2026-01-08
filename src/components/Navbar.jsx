@@ -1,101 +1,72 @@
 import React, { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
-
-//Navlinks
-const navLinks = [
-  {
-    name: "About Us",
-    href: "#",
-    dropdown: [
-      { name: "Origin", href: "#" },
-      { name: "Partnerships", href: "#" },
-    ],
-  },
-  {
-    name: "Products",
-    href: "#",
-    dropdown: [
-      { name: "Digital Banking", href: "#" },
-      { name: "Open Banking", href: "#" },
-      { name: "Embedded Finance", href: "#" },
-    ],
-  },
-  {
-    name: "Developers",
-    href: "#",
-    dropdown: [
-      { name: "API Documentation", href: "#" },
-      { name: "Guides", href: "#" },
-      { name: "E-learning", href: "#" },
-    ],
-  },
-  {name: "Demo", href: "#" },
-];
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import navLinks from "../utils/navbar-links";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [mobileOpenIndex, setMobileOpenIndex] = useState(null);
+
+  const toggleMobileDropdown = (index) => {
+    if (mobileOpenIndex === index) {
+      setMobileOpenIndex(null);
+    } else {
+      setMobileOpenIndex(index);
+    }
+  };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md py-4">
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <nav className="navbar">
+      <div className="navbar__container">
         {/* Logo */}
-        <div className="flex items-center gap-2 font-bold text-2xl text-navy-900 cursor-pointer">
-          <div className="w-8 h-8 opacity-100">
-            <img src="/navbar/adiba_logo.png" alt="adiba logo" fetchPriority="high" />
-          </div>
-          <span>adiba</span>
-        </div>
+        <Link className="navbar__logo" to="/">
+          <img src="/navbar/logo.svg" alt="adiba logo" fetchPriority="high" />
+        </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex lg:ml-50 xl:ml-70 md:ml-0 items-center gap-8 text-sm font-medium text-gray-600">
-          {navLinks.map((link) => (
-            <div key={link.name} className="relative group">
-              {/* Main Link */}
-              <a
-                href={link.href}
-                className="flex items-center gap-1 hover:text-navy-900 transition py-2"
-              >
-                {link.name}
-                {/* Chevron for dropdowns */}
-                {link.dropdown && (
-                  <ChevronDown
-                    size={14}
-                    className="group-hover:rotate-180 transition-transform duration-300"
-                  />
-                )}
-              </a>
-
-              {/* Dropdown Menu*/}
-              {link.dropdown && (
-                <div className="absolute top-full -left-4 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                  <div className="bg-white rounded-xl shadow-xl border border-gray-100 p-4 min-w-50 flex flex-col gap-2">
-                    {link.dropdown.map((subItem) => (
-                      <a
-                        key={subItem.name}
-                        href={subItem.href}
-                        className="block px-4 py-2 text-gray-500 hover:text-navy-900 hover:bg-gray-50 rounded-lg transition"
-                      >
-                        {subItem.name}
-                      </a>
-                    ))}
-                  </div>
+        <div className="navbar__menu-items-container">
+          {/* Desktop Menu */}
+          <div className="navbar__menu-items">
+            {navLinks.map((link) => (
+              <div key={link.name} className="navbar__menu-item">
+                {/* Main Link */}
+                <div className="navbar__menu-link">
+                  {link.name}
+                  {/* Chevron for dropdowns */}
+                  {link.dropdown && (
+                    <ChevronDown size={14} className="navbar__chevron-icon" />
+                  )}
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
 
-        {/* CTA Button */}
-        <div className="hidden md:block">
-          <button className="bg-indigo-950 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-navy-800 transition shadow-lg hover:shadow-xl">
-            Get Started
-          </button>
+                {/* Dropdown Menu*/}
+                {link.dropdown && (
+                  <div className="navbar__dropdown-container">
+                    <div className="navbar__dropdown-menu">
+                      {link.dropdown.map((subItem) => (
+                        <a
+                          key={subItem.name}
+                          href={subItem.href}
+                          className="navbar__dropdown-link"
+                        >
+                          {subItem.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="navbar__cta-button-container">
+            <button className="navbar__cta-button">Get Started</button>
+          </div>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-navy-900"
+          className="navbar__mobile-menu-button"
         >
           {isOpen ? <X /> : <Menu />}
         </button>
@@ -103,30 +74,41 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-6 flex flex-col items-center gap-6 border-t border-gray-100">
-          {navLinks.map((link) => (
-            <div key={link.name} className="text-center">
-              <a
-                href={link.href}
-                className="text-lg font-medium text-navy-900 block mb-2"
-              >
-                {link.name}
-              </a>
-              {/* mobile sub-links */}
-              {link.dropdown && (
-                <div className="flex flex-col gap-2 text-sm text-gray-500">
-                  {link.dropdown.map((sub) => (
-                    <a key={sub.name} href={sub.href}>
-                      {sub.name}
-                    </a>
-                  ))}
+        <div className="navbar__mobile-menu-dropdown-container">
+          <div className="navbar__mobile-menu-list">
+            {navLinks.map((link, index) => (
+              <div key={link.name} className="navbar__mobile-menu-item">
+                <div
+                  className="navbar__mobile-menu-header"
+                  onClick={() => link.dropdown && toggleMobileDropdown(index)}
+                >
+                  <span className="navbar__mobile-link-text">{link.name}</span>
+                  {link.dropdown &&
+                    (mobileOpenIndex === index ? (
+                      <ChevronDown size={20} />
+                    ) : (
+                      <ChevronRight size={20} />
+                    ))}
                 </div>
-              )}
-            </div>
-          ))}
-          <button className="bg-navy-900 text-white px-8 py-3 rounded-full text-sm font-semibold w-[90%]">
-            Get Started
-          </button>
+
+                {/* mobile sub-links */}
+                {link.dropdown && mobileOpenIndex === index && (
+                  <div className="navbar__mobile-menu-sublinks">
+                    {link.dropdown.map((sub) => (
+                      <a
+                        key={sub.name}
+                        href={sub.href}
+                        className="navbar__mobile-sublink-text"
+                      >
+                        {sub.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <button className="navbar__mobile-cta-button">Get Started</button>
         </div>
       )}
     </nav>

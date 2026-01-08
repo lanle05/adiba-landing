@@ -1,0 +1,106 @@
+@use "../../utils/functions" as *;
+@use "../../utils/mixins" as *;
+
+.about-us {
+  overflow: hidden;
+  padding-top: fluid(1rem, 2rem);
+  padding-bottom: fluid(3rem, 6rem);
+
+  &__container {
+    margin-inline: auto;
+    padding-inline: fluid(1.5rem, 3rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
+  &__image-col {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 1024px) {
+      width: 50%;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 45rem;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__image {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__content-col {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      width: 50%;
+      text-align: left;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    @media (min-width: 1024px) {
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 480px) {
+      text-align: left;
+    }
+  }
+  &__header-text {
+    font-weight: 500;
+    font-size: 18px;
+    color: #c8700b;
+    line-height: 29px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 50px;
+    color: #161c28;
+    margin-bottom: 48px;
+  }
+
+  &__description {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    color: #59597c;
+  }
+  &__description-spacer {
+    margin-bottom: 16px;
+  }
+  &__cta-button {
+    display: flex;
+    align-items: center;
+    gap: fluid(0.5rem, 1rem);
+    padding-block: fluid(0.75rem, 1rem);
+    padding-inline: fluid(1.5rem, 3rem);
+    color: #ffffff;
+    background-color: #0f193d;
+    border-radius: 41px;
+    margin-top: 48px;
+  }
+}

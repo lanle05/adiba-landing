@@ -2,34 +2,36 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const SolutionCard = ({ title, desc, img }) => (
-  <div className="flex flex-col gap-4 group cursor-pointer">
-    <div className="rounded-2xl overflow-hidden h-48 bg-gray-100">
-      <img src={img} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+  <div className="trusted-container__cards-container">
+    <div className="trusted-container__cards__image">
+      <img src={img} alt={title} className="trusted-container__cards__image-item" />
     </div>
-    <h3 className="text-gold-500 font-bold text-lg">{title}</h3>
-    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-    <button className="w-fit px-4 py-1.5 bg-peach text-xs font-bold rounded text-navy-900 uppercase tracking-wide">Learn More</button>
+    <h3 className="trusted-container__cards__title">{title}</h3>
+    <p className="trusted-container__cards__desc">{desc}</p>
+    <div className="trusted-container__cards__button-container">
+    <button className="trusted-container__cards__button">Learn More</button>
+    </div>
   </div>
 );
 
 const TrustedSolutions = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-300 mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-gold-500 font-bold text-xs uppercase tracking-widest mb-2">
+    <section className="trusted">
+      <div className="trusted-container">
+        <div className="trusted-container__header">
+          <p className="trusted-container__header-text">
             Trusted Solutions
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="trusted-container__header-title">
             Complete embedded finance solutions for your retail business.
           </h2>
-          <p className="text-gray-500 text-lg leading-relaxed text-center">
+          <p className="trusted-container__header-desc">
             Integrate banking seamlessly into your customer journey with our
             retail engine and omnichannel API.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="trusted-container__cards">
           <SolutionCard
             title="Digital Banking"
             img="/trusted/digital.png"
@@ -52,8 +54,8 @@ const TrustedSolutions = () => {
           />
         </div>
 
-        <div className="mt-12 flex justify-center">
-          <button className="bg-navy-900 text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-navy-800">
+        <div className="trusted-container__button-container">
+          <button className="trusted-container__button">
             All Services <ArrowRight size={16} />
           </button>
         </div>
