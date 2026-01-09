@@ -132,23 +132,45 @@
     }
 
     .feature--tl {
-      top: 12%;
+      top: 5%;
       left: 3%;
     }
 
     .feature--tr {
-      top: 12%;
-      right: 5%;
+      top: 5%;
+      right: 3%;
     }
 
     .feature--bl {
-      bottom: 30%;
+      bottom: 20%;
       left: 3%;
     }
 
     .feature--br {
-      bottom: 35%;
+      bottom: 22%;
       right: 3%;
+    }
+
+    @media (width: 1024px) {
+      .feature--tl {
+        top: 5%;
+        left: 5%;
+      }
+
+      .feature--tr {
+        top: 5%;
+        right: 10%;
+      }
+
+      .feature--bl {
+        bottom: 35%;
+        left: 8%;
+      }
+
+      .feature--br {
+        bottom: 35%;
+        right: 5%;
+      }
     }
 
     @media (min-width: 1280px) {
