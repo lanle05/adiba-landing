@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { QuoteUp } from "iconsax-reactjs";
 
 const testimonialsData = [
   {
@@ -78,19 +79,27 @@ const Testimonials = () => {
 
           {/* Decorative avatars */}
           <div className="avatar a1">
-            <img src="/testimonial/person1.png" alt="" />
+            <img src="/testimonial/person 2.png" alt="" />
           </div>
 
           <div className="avatar a2">
-            <img src="/testimonial/person2.png" alt="" />
-          </div>
-
-          <div className="avatar a3">
             <img src="/testimonial/person3.png" alt="" />
           </div>
 
-          <div className="avatar a4">
+          <div className="avatar a3">
             <img src="/testimonial/person4.png" alt="" />
+          </div>
+
+          <div className="avatar a4">
+            <img src="/testimonial/person5.png" alt="" />
+          </div>
+
+          <div className="avatar a5">
+            <img src="/testimonial/person6.png" alt="" />
+          </div>
+
+          <div className="avatar a6">
+            <img src="/testimonial/david.png" alt="" />
           </div>
 
           {/* Center testimonial card */}
@@ -99,7 +108,7 @@ const Testimonials = () => {
               <img src={active.image} alt={active.name} />
             </div>
 
-            <Quote size={20} color="#d1d5db" />
+            <QuoteUp size={20} color="#EDEEF6" className="center-card__quote"/>
 
             <h4>{active.name}</h4>
             <p>“{active.shortQuote}”</p>
