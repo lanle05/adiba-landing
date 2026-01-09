@@ -26,17 +26,17 @@
     gap: 1.5rem;
 
     &__title {
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 29px;
       color: #c8700b;
+      font-weight: 500;
+      font-size: 18px;
       text-transform: uppercase;
+      line-height: 29px;
     }
 
     &__subtitle {
-      font-size: fluid(2rem, 2.75rem);
+      font-size: fluid(24px, 40px);
       font-weight: 500;
-      line-height: 1.2;
+      line-height: 40px;
       color: #161c28;
     }
 
@@ -74,14 +74,14 @@
       }
 
       &__title {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 600;
         margin-bottom: 0.5rem;
         color: #333333;
       }
 
       &__desc {
-        font-size: 16px;
+        font-size: fluid(12px, 13px);
         font-weight: 300;
         line-height: 1.6;
         color: #6f758b;
@@ -125,6 +125,7 @@
     @media (min-width: 640px) {
       grid-template-columns: repeat(2, 1fr);
       align-items: start;
+      align-self: center;
     }
 
     &-item {

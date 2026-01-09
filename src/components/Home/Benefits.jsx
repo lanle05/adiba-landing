@@ -13,22 +13,22 @@ const Benefits = () => {
             {[
               {
                 title: "Faster Time to Market",
-                desc: "ADIBA's pre-built infrastructure and streamlined development process significantly reduce the time needed to launch new financial initiatives.",
+                desc: "ADIBA's pre-built infrastructure and streamlined development process significantly reduce the time needed to launch new financial initiatives. This allows institutions to seize market opportunities quickly and stay ahead of the competition",
                 image: "/benefits/card-tick.png",
               },
               {
                 title: "Effortless Administration",
-                desc: "ADIBA's back office admin console is designed to be user-friendly and intuitive.",
+                desc: "ADIBA's back office admin console is designed to be user-friendly and intuitive. This allows financial institutions to easily manage user accounts, system settings, and monitor platform activity without the need for extensive technical expertise.",
                 image: "/benefits/favorite-chart.png",
               },
               {
                 title: "Real-time Visibility",
-                desc: "With real-time data dashboards and reports, institutions can gain immediate insights into their financial performance.",
+                desc: "With real-time data dashboards and reports, institutions can gain immediate insights into their financial performance, allowing for quicker adjustments and improved decision-making.",
                 image: "/benefits/status-up.png",
               },
               {
                 title: "Simplified Compliance",
-                desc: "Effective data analysis is crucial for regulatory compliance.",
+                desc: "Effective data analysis is crucial for regulatory compliance. ADIBA's pre-built reports can help streamline compliance efforts by providing readily available data for regulatory reporting needs.",
                 image: "/benefits/chart-success.png",
               },
             ].map((item, i) => (

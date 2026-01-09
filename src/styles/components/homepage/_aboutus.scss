@@ -47,7 +47,7 @@
     text-align: left;
 
     @media (min-width: 1024px) {
-      width: 50%;
+      width: 45%;
       text-align: left;
     }
   }
@@ -77,7 +77,7 @@
 
   &__title {
     font-weight: 500;
-    font-size: fluid(24px, 44px);
+    font-size: fluid(24px, 40px);
     line-height: 50px;
     color: #161c28;
     margin-bottom: 48px;
@@ -85,8 +85,8 @@
 
   &__description {
     font-weight: 300;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: fluid(12px, 13px);
+    line-height: 22px;
     color: #59597c;
   }
   &__description-spacer {

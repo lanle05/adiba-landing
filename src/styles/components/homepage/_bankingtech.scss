@@ -93,14 +93,17 @@
 
   .feature-title {
     padding-top: 10px;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
     color: #c8700b;
   }
 
   .feature-desc {
-    font-size: 0.75rem;
-    line-height: 1.6;
-    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.8;
+    color: #707093;
+    font-weight: 300;
   }
 
   /* Desktop floating features */
@@ -139,12 +142,12 @@
     }
 
     .feature--bl {
-      bottom: 40%;
+      bottom: 30%;
       left: 3%;
     }
 
     .feature--br {
-      bottom: 40%;
+      bottom: 35%;
       right: 3%;
     }
 

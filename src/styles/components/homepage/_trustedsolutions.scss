@@ -9,7 +9,7 @@
     .trusted-container__header {
       text-align: center;
       max-width: 72rem;
-      width: 100%;
+      width: 50%;
       margin: 0 auto 6rem auto; /* reduced bottom spacing */
 
       @media (max-width: 768px) {
@@ -30,23 +30,23 @@
     }
 
     &__header-title {
-      font-size: fluid(18px, 24px);
+      font-size: fluid(24px, 44px);
       font-weight: 500;
       line-height: 50px;
       color: #161c28;
-      padding-block: 32px; /* less vertical padding */
+      padding-block: 32px; 
 
       @media (max-width: 768px) {
         padding-block: 16px;
-        font-size: fluid(24px, 36px);
+        font-size: fluid(24px, 40px);
         line-height: 42px;
       }
     }
 
     &__header-desc {
       font-weight: 300;
-      font-size: 16px;
-      line-height: 28px;
+      font-size: fluid(12px, 13px);
+      line-height: 22px;
       color: #59597c;
     }
 
@@ -121,16 +121,16 @@
     }
     &__cards__title {
       color: #c8700b;
-      font-weight: 600;
-      font-size: 18px;
+      font-weight: 500;
+      font-size: 16px;
       line-height: 29px;
     }
 
     &__cards__desc {
       color: #707093;
+      font-size: fluid(10px, 12px);
       font-weight: 300;
-      font-size: 14px;
-      line-height: 24px;
+      line-height: 22px;
     }
 
     &__cards__button-container {
@@ -138,13 +138,12 @@
     }
     &__cards__button {
       width: fit-content;
-      padding: 6px 16px;
+      padding: 4px 12px;
       background-color: #e2c8aa;
       border: none;
       color: #0f193d;
       font-size: 12px;
       font-weight: 300;
-      text-transform: uppercase;
       border-radius: 6px;
     }
 

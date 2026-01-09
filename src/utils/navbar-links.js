@@ -1,14 +1,6 @@
 //Navlinks
 const navLinks = [
   {
-    name: "About Us",
-    href: "#",
-    dropdown: [
-      { name: "Origin", href: "#" },
-      { name: "Partnerships", href: "#" },
-    ],
-  },
-  {
     name: "Products",
     href: "#",
     dropdown: [
@@ -27,6 +19,14 @@ const navLinks = [
     ],
   },
   { name: "Demo", href: "#" },
+  {
+    name: "About Us",
+    href: "#",
+    dropdown: [
+      { name: "Origin", href: "#" },
+      { name: "Partnerships", href: "#" },
+    ],
+  },
 ];
 
 export default navLinks;
