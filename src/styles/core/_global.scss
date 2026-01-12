@@ -25,3 +25,16 @@ body {
   font-family: Poppins, sans-serif;
   font-weight: 400;
 }
+
+body.product-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #E2C8AA 0 50vh, #ffffff 50vh 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body.product-page .navbar {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  transition: background-color 0.25s ease;
+} 

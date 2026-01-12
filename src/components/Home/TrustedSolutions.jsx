@@ -1,27 +1,59 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const SolutionCard = ({ title, desc, img }) => (
+const SolutionCard = ({ title, desc, img, link }) => (
   <div className="trusted-container__cards-container">
     <div className="trusted-container__cards__image">
-      <img src={img} alt={title} className="trusted-container__cards__image-item" />
+      <img
+        src={img}
+        alt={title}
+        className="trusted-container__cards__image-item"
+      />
     </div>
     <h3 className="trusted-container__cards__title">{title}</h3>
     <p className="trusted-container__cards__desc">{desc}</p>
     <div className="trusted-container__cards__button-container">
-    <button className="trusted-container__cards__button">Learn More</button>
+      <Link to={link} className="trusted-container__cards__button">
+        Learn More
+      </Link>
     </div>
   </div>
 );
 
 const TrustedSolutions = () => {
+  const solutions = [
+    {
+      title: "Digital Banking",
+      desc: "Create your own neobank and digital bank with diverse account options, using our Digital Banking and Accounts APIs to customize and scale your financial services.",
+      img: "/trusted/digital.png",
+      link: "/product/digital-banking",
+    },
+    {
+      title: "Open Banking",
+      desc: "Our APIs enable seamless integration of payment gateways, mobile wallets, and peer-to-peer transactions, ensuring quick and secure payments for your users.",
+      img: "/trusted/payment.png",
+      link: "/product/open-banking",
+    },
+    {
+      title: "Embedded Finance",
+      desc: "With our APIs, you can provide personalized loan options, competitive interest rates, and efficient loan processing to your customers.",
+      img: "/trusted/lending.png",
+      link: "/product/embedded-finance",
+    },
+    // {
+    //   title: "Identification",
+    //   desc: "Our identity management APIs offer robust identification services, including verification methods, and biometric authentication to protect your customers' identities.",
+    //   img: "/trusted/identification.png",
+    //   link: "/product/identification",
+    // },
+  ];
+
   return (
     <section className="trusted">
       <div className="trusted-container">
         <div className="trusted-container__header">
-          <p className="trusted-container__header-text">
-            Trusted Solutions
-          </p>
+          <p className="trusted-container__header-text">Trusted Solutions</p>
           <h2 className="trusted-container__header-title">
             Complete embedded finance solutions for your retail business.
           </h2>
@@ -32,33 +64,22 @@ const TrustedSolutions = () => {
         </div>
 
         <div className="trusted-container__cards">
-          <SolutionCard
-            title="Digital Banking"
-            img="/trusted/digital.png"
-            desc="Create your own neobank and digital bank with diverse account options, using our Digital Banking and Accounts APIs to customize and scale your financial services."
-          />
-          <SolutionCard
-            title="Payment"
-            img="/trusted/payment.png"
-            desc="Our APIs enable seamless integration of payment gateways, mobile wallets, and peer-to-peer transactions, ensuring quick and secure payments for your users."
-          />
-          <SolutionCard
-            title="Lending"
-            img="/trusted/lending.png"
-            desc="With our APIs, you can provide personalized loan options, competitive interest rates, and efficient loan processing to your customers."
-          />
-          <SolutionCard
-            title="Identification"
-            img="/trusted/identification.png"
-            desc="Our identity management APIs offer robust identification services, including verification methods, , and biometric authentication to protect your customers' identities."
-          />
+          {solutions.map((solution, i) => (
+            <SolutionCard
+              key={i}
+              title={solution.title}
+              img={solution.img}
+              desc={solution.desc}
+              link={solution.link}
+            />
+          ))}
         </div>
 
-        <div className="trusted-container__button-container">
-          <button className="trusted-container__button">
+        {/* <div className="trusted-container__button-container">
+          <Link to="/products" className="trusted-container__button">
             All Services <ArrowRight size={16} />
-          </button>
-        </div>
+          </Link>
+        </div> */}
       </div>
     </section>
   );

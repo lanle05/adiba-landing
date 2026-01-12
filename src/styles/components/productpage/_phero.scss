@@ -1,3 +1,36 @@
 @use "../../utils/functions" as *;
 @use "../../utils/mixins" as *;
 
+.phero {
+  padding-top: 6rem;
+  padding-bottom: fluid(3rem, 5rem);
+  background-image: conic-gradient(#E2C8AA,#E2C8AA);
+  text-align: center;
+
+  @media(min-width:1024px){
+    margin-top: 8rem;
+  }
+
+  &__container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 fluid(1.5rem, 3rem);
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: fluid(24px, 40px);
+    line-height: 50px;
+    color: #161c28;
+    margin-bottom: 24px;
+  }
+
+  &__subtitle {
+    font-size: fluid(1rem, 1.25rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: #59597c;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+}

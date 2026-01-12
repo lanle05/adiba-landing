@@ -1,12 +1,12 @@
 import React from "react";
-import { products } from "../../utils/products";
 
-
-const Phero = () => {
+const Phero = ({ product }) => {
   return (
-    <section className="hero">
-          <h1>{products.heroTitle}</h1>
-          <p>{products.heroSubtitle}</p>
+    <section className="phero">
+      <div className="phero__container">
+        <h1 className="phero__title">{product.heroTitle}</h1>
+        <p className="phero__subtitle">{product.heroSubtitle}</p>
+      </div>
     </section>
   );
 };

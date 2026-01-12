@@ -6,19 +6,19 @@ export const products = [
     feature: [
       {
         title: "Try out our Digital Banking",
-        image: "/assets/db-1.png",
+        image: "/product/digi-banking.jpg",
         description: "Short description for the first column.",
         details: "Longer detailed text that goes underneath.",
       },
       {
         title: "Payment",
-        image: "/assets/db-2.png",
+        image: "/product/digi-banking.jpg",
         description: "Short description for the second column.",
         details: "Longer detailed text that goes underneath.",
       },
       {
         title: "Identification",
-        image: "/assets/db-3.png",
+        image: "/product/digi-banking.jpg",
         description: "Short description for the third column.",
         details: "Longer detailed text that goes underneath.",
       },
@@ -31,19 +31,19 @@ export const products = [
     feature: [
       {
         title: "Try out our Open Banking",
-        image: "/assets/db-1.png",
+        image: "/product/open-banking.jpg",
         description: "Short description for the first column.",
         details: "Longer detailed text that goes underneath.",
       },
       {
         title: "Payment",
-        image: "/assets/db-2.png",
+        image: "/product/open-banking.jpg",
         description: "Short description for the second column.",
         details: "Longer detailed text that goes underneath.",
       },
       {
         title: "Identification",
-        image: "/assets/db-3.png",
+        image: "/product/open-banking.jpg",
         description: "Short description for the third column.",
         details: "Longer detailed text that goes underneath.",
       },
@@ -56,19 +56,19 @@ export const products = [
     feature: [
       {
         title: "Try out our Embedded Finance",
-        image: "/assets/db-1.png",
+        image: "/product/fintech.jpg",
         description: "Short description for the first column.",
         details: "Longer detailed text that goes underneath.",
       },
       {
         title: "Payment",
-        image: "/assets/db-2.png",
+        image: "/product/fintech.jpg",
         description: "Short description for the second column.",
         details: "Longer detailed text that goes underneath.",
       },
       {
         title: "Identification",
-        image: "/assets/db-3.png",
+        image: "/product/fintech.jpg",
         description: "Short description for the third column.",
         details: "Longer detailed text that goes underneath.",
       },

@@ -30,7 +30,11 @@ const Navbar = () => {
               <div key={link.name} className="navbar__menu-item">
                 {/* Main Link */}
                 <div className="navbar__menu-link">
-                  {link.name}
+                  {link.href ? (
+                    <Link to={link.href}>{link.name}</Link>
+                  ) : (
+                    link.name
+                  )}
                   {/* Chevron for dropdowns */}
                   {link.dropdown && (
                     <ChevronDown size={14} className="navbar__chevron-icon" />
@@ -42,13 +46,13 @@ const Navbar = () => {
                   <div className="navbar__dropdown-container">
                     <div className="navbar__dropdown-menu">
                       {link.dropdown.map((subItem) => (
-                        <a
+                        <Link
                           key={subItem.name}
-                          href={subItem.href}
+                          to={subItem.href}
                           className="navbar__dropdown-link"
                         >
                           {subItem.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -78,30 +82,45 @@ const Navbar = () => {
           <div className="navbar__mobile-menu-list">
             {navLinks.map((link, index) => (
               <div key={link.name} className="navbar__mobile-menu-item">
-                <div
-                  className="navbar__mobile-menu-header"
-                  onClick={() => link.dropdown && toggleMobileDropdown(index)}
-                >
-                  <span className="navbar__mobile-link-text">{link.name}</span>
-                  {link.dropdown &&
-                    (mobileOpenIndex === index ? (
-                      <ChevronDown size={20} />
-                    ) : (
-                      <ChevronRight size={20} />
-                    ))}
-                </div>
+                {link.href && !link.dropdown ? (
+                  <Link
+                    to={link.href}
+                    className="navbar__mobile-menu-header"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <span className="navbar__mobile-link-text">
+                      {link.name}
+                    </span>
+                  </Link>
+                ) : (
+                  <div
+                    className="navbar__mobile-menu-header"
+                    onClick={() => link.dropdown && toggleMobileDropdown(index)}
+                  >
+                    <span className="navbar__mobile-link-text">
+                      {link.name}
+                    </span>
+                    {link.dropdown &&
+                      (mobileOpenIndex === index ? (
+                        <ChevronDown size={20} />
+                      ) : (
+                        <ChevronRight size={20} />
+                      ))}
+                  </div>
+                )}
 
                 {/* mobile sub-links */}
                 {link.dropdown && mobileOpenIndex === index && (
                   <div className="navbar__mobile-menu-sublinks">
                     {link.dropdown.map((sub) => (
-                      <a
+                      <Link
                         key={sub.name}
-                        href={sub.href}
+                        to={sub.href}
                         className="navbar__mobile-sublink-text"
+                        onClick={() => setIsOpen(false)}
                       >
                         {sub.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}

@@ -67,10 +67,14 @@
   &__menu-link {
     @include flex-center(row, center, center);
     gap: 4px;
-    font-size: fluid(12px, 14px);
-    font-weight: 400;
-    color: #555555;
-    transition: color 0.3s ease;
+
+    a {
+      text-decoration: none;
+      color: #555555;
+      font-size: fluid(12px, 14px);
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
   }
 
   &__chevron-icon {
@@ -234,4 +238,11 @@
     margin-bottom: 24px;
     transition: background-color 0.3s ease;
   }
+}
+
+/* Product page variant: make navbar transparent to show hero color */
+body.product-page .navbar {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  transition: background-color 0.25s ease;
 }

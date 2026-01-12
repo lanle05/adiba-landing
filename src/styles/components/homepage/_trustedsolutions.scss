@@ -5,6 +5,7 @@
   .trusted-container {
     margin: 0 auto;
     padding: 0 6rem;
+    margin-bottom: 4rem;
 
     .trusted-container__header {
       text-align: center;
@@ -59,7 +60,8 @@
 
       @media (min-width: 1024px) {
         flex-direction: row;
-        align-items: stretch; /* ensure children stretch to same height */
+        align-items: stretch; 
+        justify-content: space-evenly;
       }
     }
 
@@ -145,6 +147,7 @@
       font-size: 12px;
       font-weight: 300;
       border-radius: 6px;
+      text-decoration: none;
     }
 
     &__button-container {
