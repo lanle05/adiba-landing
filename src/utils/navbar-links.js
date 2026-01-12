@@ -4,9 +4,9 @@ const navLinks = [
     name: "Products",
     href: "#",
     dropdown: [
-      { name: "Digital Banking", href: "#" },
-      { name: "Open Banking", href: "#" },
-      { name: "Embedded Finance", href: "#" },
+      { name: "Digital Banking", href: "/product/digital-banking" },
+      { name: "Open Banking", href: "/product/open-banking" },
+      { name: "Embedded Finance", href: "/product/embedded-finance" },
     ],
   },
   {

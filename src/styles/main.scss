@@ -1,5 +1,6 @@
 // Main stylesheet imports
 @use "./pages/home" as *;
+@use "./pages/products" as *;
 
 @use "./core/global" as *;
 
@@ -19,3 +20,6 @@
 @use "./components/homepage/bankingtech" as *;
 @use "./components/homepage/benefits" as *;
 @use "./components/homepage/logos" as *;
+
+//Product page components
+@use "./components/productpage/phero" as *;
